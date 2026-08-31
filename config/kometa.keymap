@@ -24,7 +24,7 @@
  */
 
 /* Layer indices:
- * 0 Base, 1 Nav, 2 Mouse, 3 Media, 4 Num, 5 Sym, 6 Fun
+ * 0 Base, 1 Button 2 Nav, 3 Mouse, 4 Media, 5 Num, 6 Sym, 7 Fun
  */
 
 /* Generic mod-taps added later in Keymap Editor get a conservative setup. */
