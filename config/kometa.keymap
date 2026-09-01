@@ -10,7 +10,7 @@
  * KOMETA 42-key:
  *   - Miryoku QWERTY layer organization
  *   - urob-style positional home-row mods
- *   - dedicated system layer for maintenance actions
+ *   - maintenance actions on the hold side of Media and Fun
  *   - native ZMK Caps Word / Key Repeat support
  *
  * Physical position order in KOMETA:
@@ -21,7 +21,7 @@
  */
 
 /* Layer indices:
- * 0 Base, 1 Button, 2 Nav, 3 Mouse, 4 Media, 5 Num, 6 Sym, 7 Fun, 8 Sys
+ * 0 Base, 1 Button, 2 Nav, 3 Mouse, 4 Media, 5 Num, 6 Sym, 7 Fun
  */
 
 /* Generic mod-taps added later in Keymap Editor get a conservative setup. */
@@ -142,25 +142,11 @@
 
     };
 
+    /* F19 context key, example: EN -> grave, RU -> ъ. Reserved for utilities like karabiner. */
+
     /* Language switch combo: F15=LANG 1, F16=LANG 2, F17=LANG 3 */
     combos {
         compatible = "zmk,combos";
-
-        combo_sys_left {
-            timeout-ms = <50>;
-            key-positions = <36 38>;
-            bindings = <&mo 8>;
-            layers = <0>;
-            slow-release;
-        };
-
-        combo_sys_right {
-            timeout-ms = <50>;
-            key-positions = <39 41>;
-            bindings = <&mo 8>;
-            layers = <0>;
-            slow-release;
-        };
 
         combo_lang {
             timeout-ms = <50>;
@@ -220,9 +206,9 @@
         media_layer {
             display-name = "Media";
             bindings = <
-                &none  &none  &none  &none  &none  &none    &none  &none  &kp C_BRI_DN  &kp C_BRI_UP  &none  &studio_unlock
-                &none  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none    &none  &kp C_PREV  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_NEXT  &none
-                &none  &none  &none  &none  &none  &none    &out OUT_TOG  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &none
+                &none  &bootloader  &none  &none  &none  &sys_reset    &none  &none  &kp C_BRI_DN  &kp C_BRI_UP  &none  &studio_unlock
+                &none  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &soft_off    &none  &kp C_PREV  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_NEXT  &none
+                &none  &none  &none  &none  &none  &bt BT_CLR_ALL    &out OUT_TOG  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &none
                 &none  &none  &none    &kp C_STOP  &kp C_PP  &kp C_MUTE
             >;
         };
@@ -250,20 +236,10 @@
         fun_layer {
             display-name = "Fun";
             bindings = <
-                &none  &kp F12  &kp F7  &kp F8  &kp F9  &kp PSCRN    &none  &none  &none  &none  &none  &none
+                &none  &kp F12  &kp F7  &kp F8  &kp F9  &kp PSCRN    &sys_reset  &none  &none  &none  &bootloader  &none
                 &none  &kp F11  &kp F4  &kp F5  &kp F6  &kp SLCK     &none  &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI  &none
-                &none  &kp F10  &kp F1  &kp F2  &kp F3  &kp PAUSE_BREAK    &none  &none  &none  &none  &none  &none
+                &none  &kp F10  &kp F1  &kp F2  &kp F3  &kp PAUSE_BREAK    &bt BT_CLR  &none  &none  &none  &none  &none
                 &kp K_APP  &kp SPACE  &kp TAB    &none  &none  &none
-            >;
-        };
-
-        sys_layer {
-            display-name = "Sys";
-            bindings = <
-                &studio_unlock  &none  &bootloader  &out OUT_TOG  &soft_off  &sys_reset    &sys_reset  &soft_off  &out OUT_TOG  &bootloader  &none  &studio_unlock
-                &bt BT_CLR_ALL  &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3    &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0  &bt BT_CLR  &bt BT_CLR_ALL
-                &none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
-                &none  &none  &none    &none  &none  &none
             >;
         };
     };
