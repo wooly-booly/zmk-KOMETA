@@ -57,6 +57,8 @@ Use repository files in this order:
 
 ## Validation
 
+Do not build firmware locally for validation. Do not run `west build`, launch Docker-based ZMK builds, or download build dependencies. Firmware compilation is handled by GitHub Actions after the user pushes the changes.
+
 For every change, run at least:
 
 ```sh
