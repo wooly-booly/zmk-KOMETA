@@ -92,7 +92,7 @@
             >;
         };
 
-        /* Tap for F18 (leader key); interrupt from the right half or thumbs for Hyper. */
+        /* Tap for F18 (Leader key); interrupt from the right half or thumbs for Hyper. */
         hyper_l: hyper_l {
             compatible = "zmk,behavior-hold-tap";
             label = "Hyper Left";
@@ -142,6 +142,7 @@
 
     };
 
+    /* Language switch combo: F15=LANG 1, F16=LANG 2, F17=LANG 3 */
     combos {
         compatible = "zmk,combos";
 
