@@ -1,6 +1,10 @@
 include:
   - board: nice_nano@2.0.0//zmk
     shield: kometa_left
+    snippet: studio-rpc-usb-uart
+    cmake-args: >
+      -DCONFIG_ZMK_SPLIT_BLE_CENTRAL_BATTERY_LEVEL_FETCHING=y
+      -DCONFIG_ZMK_SPLIT_BLE_CENTRAL_BATTERY_LEVEL_PROXY=y
   - board: nice_nano@2.0.0//zmk
     shield: kometa_right
   - board: nice_nano@2.0.0//zmk
