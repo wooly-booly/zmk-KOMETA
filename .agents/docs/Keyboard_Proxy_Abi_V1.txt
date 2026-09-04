@@ -1,0 +1,29 @@
+Keyboard Proxy ABI v1
+=====================
+
+F13  LEADER
+F14  RESERVED
+
+F15  LANG_EN
+F16  LANG_RU
+F17  LANG_UK
+
+SYMBOL PROXIES:
+              Plain    RightCtrl    RightOption
+F18  SYM_1    {        }            &
+F19  SYM_2    [        ]            $
+F20  SYM_3    `        ~            ^
+F21  SYM_4    ;        :            UNASSIGNED
+F22  SYM_5    \        |            UNASSIGNED
+F23  SYM_6    /        ?            UNASSIGNED
+F24  SYM_7    @        #            UNASSIGNED
+
+RULES:
+- F13-F24 are internal proxy keys only.
+- Never use F13-F24 for application shortcuts.
+- RightCtrl and RightOption are transport modifiers for symbol proxies. The
+  proxy resolver must consume them; they must never reach applications.
+- Unassigned RightOption symbol proxies are reserved for future auxiliaries.
+- Never assign a meaning to Shift, Cmd, or Hyper + F13-F24.
+- Physical keyboard mappings may differ, semantic F-key meanings never do.
+- F14 remains unassigned until a genuinely global proxy is needed.
