@@ -6,8 +6,6 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
 
-#define HYPER(k) LC(LA(LS(LG(k))))
-
 /*
  * KOMETA 42-key:
  *   - Miryoku QWERTY layer organization with MIRYOKU_NAV=VI
@@ -141,7 +139,7 @@
         button_layer {
             display-name = "Button";
             bindings = <
-                &none  &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &kp HYPER(BSLH)    &kp LG(LS(Z))  &kp LG(V)  &kp LG(C)  &kp LG(X)  &kp LG(Z)  &none
+                &none  &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &kp LC(LA(LS(LG(BSLH))))    &kp LG(LS(Z))  &kp LG(V)  &kp LG(C)  &kp LG(X)  &kp LG(Z)  &none
                 &none  &kp LGUI   &kp LALT   &kp LCTRL  &kp LSHFT  &kp LG(A)        &none  &kp LSHFT  &kp LCTRL  &kp LALT   &kp LGUI   &none
                 &none  &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &kp LG(LS(Z))    &kp LG(LS(Z))  &kp LG(V)  &kp LG(C)  &kp LG(X)  &kp LG(Z)  &none
 
@@ -174,9 +172,9 @@
         media_layer {
             display-name = "Media";
             bindings = <
-                &none  &none  &kp HYPER(N7)  &kp HYPER(N8)  &kp HYPER(N9)  &none    &kp C_PREV  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_NEXT  &kp C_BRI_DN  &kp C_BRI_UP
-                &none  &hml LGUI HYPER(A)  &hml LALT HYPER(N4)  &hml LCTRL HYPER(N5)  &hml LSHFT HYPER(N6)  &none    &double_shift  &kp F15  &kp F16  &kp F17  &none  &none
-                &none  &kp HYPER(N0)  &kp HYPER(N1)  &kp HYPER(N2)  &kp HYPER(N3)  &none    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &out OUT_TOG  &studio_unlock
+                &none  &none  &kp LC(LA(LS(LG(N7))))  &kp LC(LA(LS(LG(N8))))  &kp LC(LA(LS(LG(N9))))  &none    &kp C_PREV  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_NEXT  &kp C_BRI_DN  &kp C_BRI_UP
+                &none  &hml LGUI LC(LA(LS(LG(A))))  &hml LALT LC(LA(LS(LG(N4))))  &hml LCTRL LC(LA(LS(LG(N5))))  &hml LSHFT LC(LA(LS(LG(N6))))  &none    &double_shift  &kp F15  &kp F16  &kp F17  &none  &none
+                &none  &kp LC(LA(LS(LG(N0))))  &kp LC(LA(LS(LG(N1))))  &kp LC(LA(LS(LG(N2))))  &kp LC(LA(LS(LG(N3))))  &none    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &out OUT_TOG  &studio_unlock
                 &none  &none  &none    &kp C_STOP  &kp C_PP  &kp C_MUTE
             >;
         };
