@@ -30,7 +30,7 @@
     tapping-term-ms = <200>;
 };
 
-/* urob-style sticky-key defaults, useful if you bind &sk later. */
+/* Sticky Shift on Base: F+J combo or position 0. */
 &sk {
     release-after-ms = <900>;
     quick-release;
@@ -110,14 +110,28 @@
         };
     };
 
-    /* Language switch combo: F15=LANG 1, F16=LANG 2, F17=LANG 3 */
     combos {
         compatible = "zmk,combos";
 
+        /* Language switch combo: F15=LANG 1, F16=LANG 2, F17=LANG 3 */
         combo_lang {
             timeout-ms = <80>;
             key-positions = <24 35>;
             bindings = <&kp F17>;
+            layers = <0>;
+        };
+
+        combo_lang_toggle {
+            timeout-ms = <45>;
+            key-positions = <38 39>;
+            bindings = <&kp RC(F15)>;
+            layers = <0>;
+        };
+
+        combo_sticky_shift {
+            timeout-ms = <35>;
+            key-positions = <16 19>;
+            bindings = <&sk LSHFT>;
             layers = <0>;
         };
     };
@@ -128,7 +142,7 @@
         base_layer {
             display-name = "Base";
             bindings = <
-                /* outer */ &none  &kp Q  &kp W  &kp E  &kp R  &kp T    &kp Y  &kp U  &kp I  &kp O  &kp P  &kp LEFT_BRACKET /* outer */
+                /* outer */ &sk LSHFT  &kp Q  &kp W  &kp E  &kp R  &kp T    &kp Y  &kp U  &kp I  &kp O  &kp P  &kp LEFT_BRACKET /* outer */
                 /* outer */ &mt LC(LA(LS(LGUI))) F13  &hml LGUI A  &hml LALT S  &hml LCTRL D  &hml LSHFT F  &kp G    &kp H  &hmr LSHFT J  &hmr LCTRL K  &hmr LALT L  &hmr LGUI SEMI  &mt LC(LA(LS(LGUI))) SQT /* outer */
                 /* outer */ &kp F15  &btl 1 Z  &kp X  &kp C  &kp V  &kp B    &kp N  &kp M  &kp COMMA  &kp DOT  &btl 1 SLASH  &kp F16 /* outer */
 
