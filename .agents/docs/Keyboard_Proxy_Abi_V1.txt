@@ -7,15 +7,16 @@ F14  RESERVED
 F15  LANG_EN
 F16  LANG_RU
 F17  LANG_UK
+RightCtrl+F15  LANG_TOGGLE_EN_RU
 
 SYMBOL PROXIES:
               Plain    RightCtrl    RightOption
 F18  SYM_1    {        }            &
 F19  SYM_2    [        ]            $
 F20  SYM_3    `        ~            ^
-F21  SYM_4    ;        :            UNASSIGNED
-F22  SYM_5    \        |            UNASSIGNED
-F23  SYM_6    /        ?            UNASSIGNED
+F21  SYM_4    ;        :            "
+F22  SYM_5    \        |            ,
+F23  SYM_6    /        ?            .
 F24  SYM_7    @        #            UNASSIGNED
 
 RULES:

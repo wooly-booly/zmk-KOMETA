@@ -47,6 +47,9 @@ Use repository files in this order:
 - Do not reintroduce `&to 0` merely to leave a momentary layer; releasing the originating `&lt`/`&mo` already returns to the prior layer.
 - Never flash hardware, clear Bluetooth profiles, or use `settings_reset`.
 
+## Commentary and documentation language
+Write new and editable when creating and modifying code and configs comments in English.
+
 ## Editing guidelines
 
 - Make the smallest change that satisfies the request and preserve unrelated user edits.
