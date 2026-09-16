@@ -114,14 +114,14 @@
         compatible = "zmk,combos";
 
         combo_lang_toggle {
-            timeout-ms = <50>;
+            timeout-ms = <55>;
             key-positions = <38 39>;
             bindings = <&kp RC(F15)>;
             layers = <0>;
         };
 
         combo_sticky_shift {
-            timeout-ms = <50>;
+            timeout-ms = <55>;
             key-positions = <16 19>;
             bindings = <&sk LSHFT>;
             layers = <0>;
@@ -136,7 +136,7 @@
             bindings = <
                 /* outer */ &kp RA(F21)  &kp Q  &kp W  &kp E  &kp R  &kp T    &kp Y  &kp U  &kp I  &kp O  &kp P  &kp LEFT_BRACKET /* outer */
                 /* outer */ &mt LC(LA(LS(LGUI))) F13  &hml LGUI A  &hml LALT S  &hml LCTRL D  &hml LSHFT F  &kp G    &kp H  &hmr LSHFT J  &hmr LCTRL K  &hmr LALT L  &hmr LGUI SEMI  &mt LC(LA(LS(LGUI))) SQT /* outer */
-                /* outer */ &mt LSHFT RA(F23)  &btl 1 Z  &kp X  &kp C  &kp V  &kp B    &kp N  &kp M  &kp COMMA  &kp DOT  &btl 1 SLASH  &mt RSHFT RA(F22) /* outer */
+                /* outer */ &kp LSHFT  &btl 1 Z  &kp X  &kp C  &kp V  &kp B    &kp N  &kp M  &kp COMMA  &kp DOT  &btl 1 SLASH  &mt RSHFT RA(F22) /* outer */
 
                 &lt 4 ESC  &lt 2 SPACE  &lt 3 TAB    &lt 6 RET  &lt 5 BSPC  &lt 7 DEL
             >;
@@ -178,10 +178,10 @@
         media_layer {
             display-name = "Media";
             bindings = <
-                &none  &none  &kp LC(LA(LS(LG(N7))))  &kp LC(LA(LS(LG(N8))))  &kp LC(LA(LS(LG(N9))))  &none    &kp C_PREV  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_NEXT  &kp C_BRI_DN  &kp C_BRI_UP
-                &none  &hml LGUI LC(LA(LS(LG(A))))  &hml LALT LC(LA(LS(LG(N4))))  &hml LCTRL LC(LA(LS(LG(N5))))  &hml LSHFT LC(LA(LS(LG(N6))))  &none    &double_shift  &kp F15  &kp F16  &kp F17  &none  &none
-                &none  &kp LC(LA(LS(LG(N0))))  &kp LC(LA(LS(LG(N1))))  &kp LC(LA(LS(LG(N2))))  &kp LC(LA(LS(LG(N3))))  &none    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &out OUT_TOG  &studio_unlock
-                &none  &none  &none    &kp C_STOP  &kp C_PP  &kp C_MUTE
+                &none  &none  &none  &none  &none  &none    &kp C_PREV  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_NEXT  &kp C_BRI_DN  &kp C_BRI_UP
+                &none  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none    &double_shift  &kp F15  &kp F16  &kp F17  &none  &none
+                &none  &none  &none  &none  &none  &none    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &out OUT_TOG  &studio_unlock
+                &none  &none  &none    &kp LC(LA(LS(LG(F9))))  &kp C_PP  &kp C_MUTE
             >;
         };
 
