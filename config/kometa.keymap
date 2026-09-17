@@ -146,7 +146,7 @@
             display-name = "Button";
             bindings = <
                 &none  &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &kp LC(LA(LS(LG(BSLH))))    &kp LG(LS(Z))  &kp LG(V)  &kp LG(C)  &kp LG(X)  &kp LG(Z)  &none
-                &none  &hml LGUI LG(A)  &kp LALT  &kp LCTRL  &kp LSHFT  &none        &none  &kp LSHFT  &kp LCTRL  &kp LALT   &kp LGUI   &none
+                &none  &mt LGUI LG(A)  &kp LALT  &kp LCTRL  &kp LSHFT  &none        &none  &kp LSHFT  &kp LCTRL  &kp LALT   &kp LGUI   &none
                 &none  &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &kp LG(LS(Z))    &kp LG(LS(Z))  &kp LG(V)  &kp LG(C)  &kp LG(X)  &kp LG(Z)  &none
 
                 &mkp MCLK  &mkp LCLK  &mkp RCLK    &mkp RCLK  &mkp LCLK  &mkp MCLK
