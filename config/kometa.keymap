@@ -164,7 +164,7 @@
                 &none  &mt LGUI LG(A)  &kp LALT  &kp LCTRL  &kp LSHFT  &none        &none  &kp LSHFT  &kp LCTRL  &kp LALT   &kp LGUI   &none
                 &none  &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &kp LG(LS(Z))    &kp LG(LS(Z))  &kp LG(V)  &kp LG(C)  &kp LG(X)  &kp LG(Z)  &none
 
-                &mkp RCLK  &mkp LCLK  &mkp LG(GRAVE)   &mkp RCLK  &mkp LCLK  &mkp MCLK
+                &mkp RCLK  &mkp LCLK  &kp LG(GRAVE)   &mkp RCLK  &mkp LCLK  &mkp MCLK
             >;
         };
 
@@ -214,7 +214,7 @@
         sym_layer {
             display-name = "Sym";
             bindings = <
-                &none  &kp F18      &kp RA(F18)  &kp ASTRK  &kp SLASH   &kp RC(F18)    &sys_reset  &none  &none  &none  &none  &none
+                &none  &kp F18      &kp RA(F18)  &kp ASTRK  &kp F23     &kp RC(F18)    &sys_reset  &none  &none  &none  &none  &none
                 &none  &kp RC(F21)  &kp RA(F19)  &kp PRCNT  &kp RA(F20) &kp PLUS       &none  &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI  &none
                 &none  &kp RC(F20)  &kp EXCL     &kp F24    &kp RC(F24) &kp RC(F22)    &none  &none  &none  &none  &none  &none
                 &kp LPAR  &kp RPAR  &kp UNDER    &none  &none  &none

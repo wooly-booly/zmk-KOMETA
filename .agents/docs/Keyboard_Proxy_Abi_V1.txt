@@ -10,7 +10,10 @@ F14  RESERVED
 F15  LANG_EN
 F16  LANG_RU
 F17  LANG_UK
-RightCtrl+F15  LANG_TOGGLE_EN_RU
+RightCtrl+F15  LANG_TOGGLE_EN_RU (совместимость, только в EN/RU)
+
+F15/F16/F17 отправляются с Media-19/20/21. У RightCtrl+F15 сохранён
+обработчик Karabiner; текущий keymap этот сигнал не выдаёт.
 
 Символьные прокси:
 
@@ -23,8 +26,10 @@ F22  SYM_5    \                   |           ,             —
 F23  SYM_6    /                   ?           .             —
 F24  SYM_7    @                   #           <             >
 
-«—» обозначает ячейку без назначения. Правила Karabiner выбирают
-преобразование с учётом раскладки. Для фиксированной пунктуации KOMETA
+«—» обозначает ячейку без назначения. Sym-4 отправляет одиночный F23
+для /. Karabiner выводит Slash в EN, Shift+Backslash в RU и
+Shift+Non-US-Backslash в UK. Tap Base-34 отправляет обычный SLASH
+с поведением текущей раскладки. Для фиксированной пунктуации KOMETA
 действуют следующие привязки (позиции с нуля):
 
 Nav-23       RightOption+F21            "  (Base-0 сейчас &none)
@@ -39,18 +44,23 @@ Nav-34       RightCtrl+F23              ?
 
 Hyper = Ctrl+Alt+Shift+Cmd. KOMETA отправляет левые модификаторы.
 Hyper+F1…F12 — диапазон системных действий macOS по ADR-0005 Key Grammar.
-В Media используются следующие назначения:
+Текущие назначения в keymap:
 
 Media-22 (;)     Hyper+F1  &kp LC(LA(LS(LG(F1))))
   system.display.builtin.connection.toggle — BetterDisplay, Toggle built-in display
 Media-39 (RET)   Hyper+F9  &kp LC(LA(LS(LG(F9))))
   system.microphone.mute.toggle — Raycast, toggle-mute
+Nav-22 (;)       Hyper+F12 &kp LC(LA(LS(LG(F12))))
+  text.caps_word.toggle — Hammerspoon, Caps Word для EN/RU
 
 Правила
 -------
 
 - F13…F24 зарезервированы под внутренние прокси. Приложения получают
   результат обработки, а системные обработчики принимают Hyper+F1…F12.
+- Karabiner разрешает языковые и символьные сигналы F15…F24 только
+  от KOMETA (7504:24926, keyboard+pointing). F13 остаётся общим
+  лидером Tuna, в том числе для короткого Caps через Karabiner.
 - RightCtrl и RightOption в символьных прокси являются транспортными
   модификаторами. Резолвер Karabiner поглощает их при преобразовании.
 - Shift и Caps Lock могут участвовать в обработке действующих символьных
