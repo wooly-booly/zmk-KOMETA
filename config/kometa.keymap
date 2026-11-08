@@ -41,6 +41,12 @@
     continue-list = <UNDERSCORE MINUS BACKSPACE DELETE>;
 };
 
+/* Keep the standard binding name, but wait for both keys of Tab + G. */
+&soft_off {
+    compatible = "zmk,behavior-kometa-soft-off";
+    /delete-property/ split-peripheral-off-on-press;
+};
+
 / {
     behaviors {
         /*
