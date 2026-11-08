@@ -1,7 +1,10 @@
 Keyboard Proxy ABI v1
 =====================
 
-F13  LEADER
+Внутренние прокси
+-----------------
+
+F13  LEADER (Tuna Combo Mode)
 F14  RESERVED
 
 F15  LANG_EN
@@ -9,22 +12,48 @@ F16  LANG_RU
 F17  LANG_UK
 RightCtrl+F15  LANG_TOGGLE_EN_RU
 
-SYMBOL PROXIES:
-              Plain    RightCtrl    RightOption
-F18  SYM_1    {        }            &
-F19  SYM_2    [        ]            $
-F20  SYM_3    `        ~            ^
-F21  SYM_4    ;        :            "
-F22  SYM_5    \        |            ,
-F23  SYM_6    /        ?            .
-F24  SYM_7    @        #            UNASSIGNED
+Символьные прокси:
 
-RULES:
-- F13-F24 are internal proxy keys only.
-- Never use F13-F24 for application shortcuts.
-- RightCtrl and RightOption are transport modifiers for symbol proxies. The
-  proxy resolver must consume them; they must never reach applications.
-- Unassigned RightOption symbol proxies are reserved for future auxiliaries.
-- Never assign a meaning to Shift, Cmd, or Hyper + F13-F24.
-- Physical keyboard mappings may differ, semantic F-key meanings never do.
-- F14 remains unassigned until a genuinely global proxy is needed.
+              Без модификаторов   RightCtrl   RightOption   RightCtrl+RightOption
+F18  SYM_1    {                   }           &             —
+F19  SYM_2    [                   ]           $             —
+F20  SYM_3    `                   ~           ^             —
+F21  SYM_4    ;                   :           "             —
+F22  SYM_5    \                   |           ,             —
+F23  SYM_6    /                   ?           .             —
+F24  SYM_7    @                   #           <             >
+
+«—» обозначает ячейку без назначения. Правила Karabiner выбирают
+преобразование с учётом раскладки. Для фиксированной пунктуации KOMETA
+действуют следующие привязки (позиции с нуля):
+
+Nav-23       RightOption+F21            "  (Base-0 сейчас &none)
+Base-35 tap  RightOption+F22            ,  (hold: Right Shift)
+Num-36       RightOption+F23            .
+Nav-32       RightOption+F24            <
+Nav-33       RightCtrl+RightOption+F24  >
+Nav-34       RightCtrl+F23              ?
+
+Глобальные системные сочетания
+------------------------------
+
+Hyper = Ctrl+Alt+Shift+Cmd. KOMETA отправляет левые модификаторы.
+Hyper+F1…F12 — диапазон системных действий macOS по ADR-0005 Key Grammar.
+В Media используются следующие назначения:
+
+Media-22 (;)     Hyper+F1  &kp LC(LA(LS(LG(F1))))
+  system.display.builtin.connection.toggle — BetterDisplay, Toggle built-in display
+Media-39 (RET)   Hyper+F9  &kp LC(LA(LS(LG(F9))))
+  system.microphone.mute.toggle — Raycast, toggle-mute
+
+Правила
+-------
+
+- F13…F24 зарезервированы под внутренние прокси. Приложения получают
+  результат обработки, а системные обработчики принимают Hyper+F1…F12.
+- RightCtrl и RightOption в символьных прокси являются транспортными
+  модификаторами. Резолвер Karabiner поглощает их при преобразовании.
+- Shift и Caps Lock могут участвовать в обработке действующих символьных
+  прокси. Отдельные команды на Shift, Cmd или Hyper + F13…F24 не назначаются.
+- Физическая позиция может меняться с keymap. Значение прокси сохраняется.
+- F14 остаётся в резерве.
